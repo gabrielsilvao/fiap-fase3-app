@@ -1,6 +1,6 @@
 node_modules
-prisma/schema.prisma
 dist
+.env
 coverage
 data
 !src/data

@@ -8,7 +8,7 @@ import {
   makeUpdateProductController
 } from '@/main/factories/controllers'
 
-export default (router: Router): void => {
+export const product = (router: Router): void => {
   router.get('/products', auth, adaptRoute(makeLoadProductsController()))
   router.post('/products', adminAuth, adaptRoute(makeAddProductController()))
   router.delete('/products/:id', adminAuth, adaptRoute(makeDeleteProductController()))

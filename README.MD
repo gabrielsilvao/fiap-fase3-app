@@ -23,7 +23,6 @@ Tópicos
 * node            18.16.0
 * npm             9.5.1
 * docker          23.0.5
-* docker-compose  2.23.0
 
 ##  Serviços
 
@@ -35,22 +34,20 @@ Tópicos
   - bcrypt        5.1.1
   - cli-color     2.0.3
   - express       4.18.2
-  - fast-glob     3.3.2
   - jsonwebtoken  9.0.2
-  - mongodb       6.3.0
+  - prisma        5.14.0
   - validator     13.11.0
 
 ### Dependências de Desenvolvimento
-  - jest          29.7.0
-  - supertest     6.3.3
-  - mockdate      3.0.5
-  - husky         8.3.0
-  - lint-staged   15.2.0
-  - rimraf        5.0.5
-  - ts-jest       29.1.1
-  - ts-node       10.9.2
-  - typescript    5.3.3
-  - module-alias  2.2.3
+  - @prisma/client  5.14.0
+  - jest            29.7.0
+  - husky           8.3.0
+  - lint-staged     15.2.0
+  - rimraf          5.0.5
+  - ts-jest         29.1.1
+  - ts-node         10.9.2
+  - typescript      5.3.3
+  - module-alias    2.2.3
   - eslint                      7.32.0 || 8.2.0
     - eslint-config-airbnb-base 15.0.0
     - eslint-plugin-import      2.25.2

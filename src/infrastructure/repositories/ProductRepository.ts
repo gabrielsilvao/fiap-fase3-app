@@ -18,7 +18,17 @@ export class ProductRepository implements
   }
 
   async loadAll (filter: any): Promise<Product[]> {
-    return await prismaClient.product.findMany({ where: filter })
+    return await prismaClient.product.findMany({
+      where: filter,
+      select: {
+        id: true,
+        name: true,
+        price: true,
+        category: true,
+        description: true,
+        image: true
+      }
+    })
   }
 
   async delete (id: string): Promise<void> {

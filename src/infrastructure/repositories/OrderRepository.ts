@@ -25,14 +25,12 @@ export class OrderRepository implements IAddOrderRepository, IUpdateOrderReposit
     return await prismaClient.order.findMany({
       where: filter,
       select: {
-        id: false,
         number: true,
         customer: true,
         status: true,
         amount: true,
         items: {
           select: {
-            id: false,
             amount: true,
             product: {
               select: {

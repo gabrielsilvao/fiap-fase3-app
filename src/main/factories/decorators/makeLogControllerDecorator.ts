@@ -1,4 +1,4 @@
-import { LogRepository } from '@/infrastructure/repositories/mysql'
+import { LogRepository } from '@/infrastructure/repositories'
 import { LogControllerDecorator } from '@/main/decorators'
 import { type IController } from '@/core/ports/driving/presentation'
 

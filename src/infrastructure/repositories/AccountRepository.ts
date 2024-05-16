@@ -21,7 +21,16 @@ export class AccountRepository implements
   }
 
   async loadByEmail (email: string): Promise<WithId<Account>> {
-    return await prismaClient.account.findUnique({ where: { email } })
+    return await prismaClient.account.findUnique({
+      where: { email },
+      select: {
+        id: true,
+        name: true,
+        cpf: true,
+        email: true,
+        password: true
+      }
+    })
   }
 
   async updateAccessToken (id: string, token: string): Promise<void> {
@@ -36,12 +45,28 @@ export class AccountRepository implements
           { role },
           { role: 'admin' }
         ]
+      },
+      select: {
+        id: true,
+        name: true,
+        cpf: true,
+        email: true,
+        password: true
       }
     })
   }
 
   async loadByCpf (cpf: string): Promise<WithId<Account>> {
-    return await prismaClient.account.findFirst({ where: { cpf } })
+    return await prismaClient.account.findFirst({
+      where: { cpf },
+      select: {
+        id: true,
+        name: true,
+        cpf: true,
+        email: true,
+        password: true
+      }
+    })
   }
 
   async deleteAccessToken (email: string): Promise<void> {

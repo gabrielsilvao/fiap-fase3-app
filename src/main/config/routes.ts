@@ -1,11 +1,13 @@
 import { type Express, Router } from 'express'
-import { readdirSync } from 'fs'
-import { join } from 'path'
+import { account, login, logout, order, product, health } from '@/main/routes'
 
 export default (app: Express): void => {
   const router = Router()
   app.use('/api', router)
-  readdirSync(join(__dirname, '../routes')).map(async file => {
-    if (!file.includes('.map.')) (await import(`../routes/${file}`)).default(router)
-  })
+  account(router)
+  login(router)
+  logout(router)
+  order(router)
+  product(router)
+  health(router)
 }
